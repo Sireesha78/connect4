@@ -47,13 +47,16 @@ class Home extends React.Component {
   render() {
     return (
       <div><br /><br />
-        <center><h1 style={{ backgroundColor: 'yellow' }}>RULES FOR THE GAME</h1></center>
-        <ol style={{ backgroundColor: "pink" }}>
+        <center><h1 style={{ backgroundColor: 'yellow'}}>RULES FOR THE GAME</h1></center><br /><br/>
+        <ol style={{ backgroundColor: "pink" , fontSize:'50'}}>
           <li>
             Before starting the game player must select a color
              </li>
           <li>
             Start the game by selecting their grids alternatively
+             </li>
+             <li>
+             Each player will drop in one checker piece at a time. This will give you a chance to either build your row, or stop your opponent from getting four in a row.
              </li>
           <li>
             Player wins when he connects 4 same color grids in the same row, column or diagonally
@@ -80,15 +83,15 @@ class About extends React.Component {
       <div class="container"><center><br /><br /><br/>
         <div class="row">
           <div class="col"><br />< br />< br />
-            <lable>Player 1: </lable>
+            <label style={{fontSize:20}}>Player 1: </label>
             <input type="text" placeholder="Name" onChange={this.readp1} value={this.state.player1} />&emsp;
-            <lable>Choose color: </lable>
+            <label style={{fontSize:20}}>Color: </label>
             <input type="color" onChange={this.readcolorp1} value={this.state.p1Color} />
           </div><br />
           <div class="col">
-            <lable>Player 2: </lable>
+            <label style={{fontSize:20}}>Player 2: </label>
             <input type="text" placeholder="Name" onChange={this.readp2} value={this.state.player2} />&emsp;
-            <lable>Choose color: </lable>
+            <label style={{fontSize:20}}>Color: </label>
             <input type="color" onChange={this.readcolorp2} value={this.state.p2Color}></input>
           </div>
           <Router><br />
@@ -482,7 +485,7 @@ class Winner extends React.Component {
   render() {
     return (
       <div><center>
-        <br /><br /><h1> {this.props.name} won the game in {this.state.min} minutes : {this.state.sec} seconds duration <br /> Total moves {this.state.move}</h1>
+        <br /><br /><h1>" {this.props.name} " won the game in {this.state.min} minutes : {this.state.sec} seconds duration <br /> Total moves {this.state.move}</h1>
         <br /><button onClick={this.restart}>restart</button>
       </center></div>
     );
